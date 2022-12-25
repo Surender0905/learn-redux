@@ -11,7 +11,7 @@ const Sad: FC<SadProps> = ({}) => {
   const dispatch = useDispatch();
 
   function handleClick() {
-    dispatch(sadclicked(qty));
+    dispatch(sadclicked(qty, new Date()));
   }
 
   return (

@@ -11,7 +11,7 @@ const Happy: FC<HappyProps> = ({}) => {
   const dispatch = useDispatch();
 
   function handleClick() {
-    dispatch(happyclicked(qty));
+    dispatch(happyclicked(qty, new Date()));
   }
 
   return (

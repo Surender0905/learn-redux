@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { happyCountSelector } from '../selectors';
 
@@ -8,7 +8,11 @@ const HappyCount: FC<HappyCountProps> = ({}) => {
   const selector = useSelector(happyCountSelector);
   return (
     <div className="bg-blue-700 px-8 py-4">
-      <div>Happiness Intensity: {selector}</div>
+      {selector.map((m, i) => (
+        <div key={i}>
+          Happiness Intensity: {m.intensity} when: {m.when.toISOString()}
+        </div>
+      ))}
     </div>
   );
 };

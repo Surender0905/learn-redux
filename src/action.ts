@@ -1,12 +1,12 @@
 export const HAPPY_CLICKED = 'happy';
 export const SAD_CLICKED = 'sad';
 
-export const happyclicked = (count: number) => ({
+export const happyclicked = (count: number, when: Date) => ({
   type: HAPPY_CLICKED,
-  payload: count,
+  payload: { count, when },
 });
 
-export const sadclicked = (count: number) => ({
+export const sadclicked = (count: number, when: Date) => ({
   type: SAD_CLICKED,
-  payload: count,
+  payload: { count, when },
 });
