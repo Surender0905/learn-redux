@@ -9,7 +9,7 @@ export type SadState = {
 export const initialSadState: SadState = {
   sadMoment: [],
 };
-function SadnessReducer(currentState: SadState, action: AnyAction) {
+function SadnessReducer(currentState = initialSadState, action: AnyAction) {
   switch (action.type) {
     case SAD_CLICKED:
       return {
@@ -19,6 +19,8 @@ function SadnessReducer(currentState: SadState, action: AnyAction) {
           { intensity: action.payload.count, when: action.payload.when },
         ],
       };
+    default:
+      return initialSadState;
   }
 
   return currentState;

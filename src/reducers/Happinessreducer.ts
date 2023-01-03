@@ -9,7 +9,7 @@ export type HappyState = {
 export const initialHappyState: HappyState = {
   happyMoment: [],
 };
-function HappinessReducer(currentState: HappyState, action: AnyAction) {
+function HappinessReducer(currentState = initialHappyState, action: AnyAction) {
   switch (action.type) {
     case HAPPY_CLICKED:
       return {
@@ -19,6 +19,8 @@ function HappinessReducer(currentState: HappyState, action: AnyAction) {
           { intensity: action.payload.count, when: action.payload.when },
         ],
       };
+    default:
+      return initialHappyState;
   }
 
   return currentState;
